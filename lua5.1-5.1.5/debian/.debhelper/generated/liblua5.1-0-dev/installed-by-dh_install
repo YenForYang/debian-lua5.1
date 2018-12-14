@@ -1,0 +1,12 @@
+debian/tmp/usr/include
+debian/tmp/usr/lib/x86_64-linux-gnu/liblua5.1-c++.a
+debian/tmp/usr/lib/x86_64-linux-gnu/liblua5.1.a
+debian/tmp/usr/lib/x86_64-linux-gnu/liblua5.1-c++.so
+debian/tmp/usr/lib/x86_64-linux-gnu/liblua5.1.so
+debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua-5.1-c++.pc
+debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua-5.1.pc
+debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua5.1-c++.pc
+debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua5.1.pc
+debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua51-c++.pc
+debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua51.pc
+debian/tmp/usr/share/lua5.1/version-script

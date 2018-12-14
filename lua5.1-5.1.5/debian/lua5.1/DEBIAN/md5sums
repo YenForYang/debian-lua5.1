@@ -1,0 +1,8 @@
+4bb812c7b02a470ce1ee3df08b95b87b  usr/bin/lua5.1
+9907d0f7ea56f1e0806cd6b8b7083171  usr/bin/luac5.1
+7c6a419b4ae048ae5cbc3a10134316f9  usr/share/doc/lua5.1/README.Debian.gz
+88ae18769bb36812a9bcc6136d097aac  usr/share/doc/lua5.1/changelog.Debian.gz
+660323b380f69c09d8ad15747fe3aed3  usr/share/doc/lua5.1/changelog.gz
+94d3c444f117a0af023a0d9b87dbb818  usr/share/doc/lua5.1/copyright
+f2303c0ad6b898962ba7809982d25e03  usr/share/man/man1/lua5.1.1.gz
+f5a39bf4e09a408de1bdd4ddfbeffb39  usr/share/man/man1/luac5.1.1.gz

@@ -1,0 +1,5 @@
+liblua5.1-0-dbg_5.1.5-8.1_amd64.deb debug extra
+liblua5.1-0-dev_5.1.5-8.1_amd64.deb libdevel optional
+liblua5.1-0_5.1.5-8.1_amd64.deb libs optional
+lua5.1-doc_5.1.5-8.1_all.deb doc optional
+lua5.1_5.1.5-8.1_amd64.deb interpreters optional

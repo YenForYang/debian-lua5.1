@@ -1,0 +1,253 @@
+ dpkg-buildpackage -D -us -uc -ui -b -Jauto -Pnobiarch,nocheck,nodoc
+dpkg-buildpackage: info: source package lua5.1
+dpkg-buildpackage: info: source version 5.1.5-8.1
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Aurelien Jarno <aurel32@debian.org>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean
+   debian/rules override_dh_auto_clean
+make[1]: Entering directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+rm -f src/lua5.1-deb-multiarch.h
+/usr/bin/make debian_clean
+make[2]: Entering directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+cd src; /usr/bin/make debian_clean
+make[3]: Entering directory '/dev/shm/lua5.1/lua5.1-5.1.5/src'
+libtool --quiet --tag=CC --mode=clean rm -f lapi.lo lcode.lo ldebug.lo ldo.lo ldump.lo lfunc.lo lgc.lo llex.lo lmem.lo lobject.lo lopcodes.lo lparser.lo lstate.lo lstring.lo ltable.lo ltm.lo lundump.lo lvm.lo lzio.lo lauxlib.lo lbaselib.lo ldblib.lo liolib.lo lmathlib.lo loslib.lo ltablib.lo lstrlib.lo loadlib.lo linit.lo lua.lo luac.lo print.lo liblua5.1.la lua5.1 luac5.1
+make[3]: Leaving directory '/dev/shm/lua5.1/lua5.1-5.1.5/src'
+make[2]: Leaving directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+make[1]: Leaving directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+   dh_clean
+FAKEROOTKEY=186082174 LD_LIBRARY_PATH=:/opt/intel/lib/intel64_lin:/opt/intel/tbb/lib/intel64/gcc4.7 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libfakeroot/libfakeroot-sysv.so debian/rules clean
+ debian/rules build
+dh build
+   dh_update_autotools_config
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+echo "#ifndef _LUA_DEB_MULTIARCH_" > src/lua5.1-deb-multiarch.h
+echo "#define _LUA_DEB_MULTIARCH_" >> src/lua5.1-deb-multiarch.h
+echo "#define DEB_HOST_MULTIARCH \"x86_64-linux-gnu\"" >> \
+	src/lua5.1-deb-multiarch.h
+echo "#endif" >> src/lua5.1-deb-multiarch.h
+make[1]: Leaving directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+   debian/rules override_dh_auto_build
+make[1]: Entering directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+/usr/bin/make debian_linux \
+	RPATH=/usr/lib/x86_64-linux-gnu \
+	LDFLAGS="-Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax"
+make[2]: Entering directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+cd src; /usr/bin/make debian_all CFLAGS+=-DLUA_USE_LINUX \
+	LIB_LIBS="-lm -ldl" LUA_LIBS="-lreadline" LDFLAGS="-Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax"
+make[3]: Entering directory '/dev/shm/lua5.1/lua5.1-5.1.5/src'
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lapi.c
+lapi.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lcode.c
+lcode.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX ldebug.c
+ldebug.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX ldo.c
+ldo.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX ldump.c
+ldump.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lfunc.c
+lfunc.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lgc.c
+lgc.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX llex.c
+llex.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lmem.c
+lmem.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lobject.c
+lobject.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lopcodes.c
+lopcodes.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lparser.c
+lparser.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lstate.c
+lstate.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lstring.c
+lstring.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX ltable.c
+ltable.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX ltm.c
+ltm.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lundump.c
+lundump.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lvm.c
+lvm.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lzio.c
+lzio.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lauxlib.c
+lauxlib.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lbaselib.c
+lbaselib.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX ldblib.c
+ldblib.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX liolib.c
+liolib.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lmathlib.c
+lmathlib.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX loslib.c
+loslib.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX ltablib.c
+ltablib.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lstrlib.c
+lstrlib.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX loadlib.c
+loadlib.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX linit.c
+linit.c
+libtool --quiet --tag=CC --mode=link icc -version-info 0:0:0 \
+            -rpath /usr/lib/x86_64-linux-gnu -Wl,--version-script,../debian/version-script -o liblua5.1.la lapi.lo lcode.lo ldebug.lo ldo.lo ldump.lo lfunc.lo lgc.lo llex.lo lmem.lo lobject.lo lopcodes.lo lparser.lo lstate.lo lstring.lo ltable.lo ltm.lo lundump.lo lvm.lo lzio.lo lauxlib.lo lbaselib.lo ldblib.lo liolib.lo lmathlib.lo loslib.lo ltablib.lo lstrlib.lo loadlib.lo linit.lo -lm -ldl
+xiar: executing 'ar'
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool --quiet --tag=CXX --mode=compile icpc -o lapi-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lapi.c
+lapi.c
+libtool --quiet --tag=CXX --mode=compile icpc -o lcode-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lcode.c
+lcode.c
+libtool --quiet --tag=CXX --mode=compile icpc -o ldebug-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX ldebug.c
+ldebug.c
+libtool --quiet --tag=CXX --mode=compile icpc -o ldo-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX ldo.c
+ldo.c
+libtool --quiet --tag=CXX --mode=compile icpc -o ldump-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX ldump.c
+ldump.c
+libtool --quiet --tag=CXX --mode=compile icpc -o lfunc-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lfunc.c
+lfunc.c
+libtool --quiet --tag=CXX --mode=compile icpc -o lgc-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lgc.c
+lgc.c
+libtool --quiet --tag=CXX --mode=compile icpc -o llex-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX llex.c
+llex.c
+libtool --quiet --tag=CXX --mode=compile icpc -o lmem-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lmem.c
+lmem.c
+libtool --quiet --tag=CXX --mode=compile icpc -o lobject-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lobject.c
+lobject.c
+libtool --quiet --tag=CXX --mode=compile icpc -o lopcodes-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lopcodes.c
+lopcodes.c
+libtool --quiet --tag=CXX --mode=compile icpc -o lparser-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lparser.c
+lparser.c
+libtool --quiet --tag=CXX --mode=compile icpc -o lstate-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lstate.c
+lstate.c
+libtool --quiet --tag=CXX --mode=compile icpc -o lstring-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lstring.c
+lstring.c
+libtool --quiet --tag=CXX --mode=compile icpc -o ltable-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX ltable.c
+ltable.c
+libtool --quiet --tag=CXX --mode=compile icpc -o ltm-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX ltm.c
+ltm.c
+libtool --quiet --tag=CXX --mode=compile icpc -o lundump-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lundump.c
+lundump.c
+libtool --quiet --tag=CXX --mode=compile icpc -o lvm-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lvm.c
+lvm.c
+libtool --quiet --tag=CXX --mode=compile icpc -o lzio-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lzio.c
+lzio.c
+libtool --quiet --tag=CXX --mode=compile icpc -o lauxlib-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lauxlib.c
+lauxlib.c
+libtool --quiet --tag=CXX --mode=compile icpc -o lbaselib-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lbaselib.c
+lbaselib.c
+libtool --quiet --tag=CXX --mode=compile icpc -o ldblib-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX ldblib.c
+ldblib.c
+libtool --quiet --tag=CXX --mode=compile icpc -o liolib-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX liolib.c
+liolib.c
+libtool --quiet --tag=CXX --mode=compile icpc -o lmathlib-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lmathlib.c
+lmathlib.c
+libtool --quiet --tag=CXX --mode=compile icpc -o loslib-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX loslib.c
+loslib.c
+libtool --quiet --tag=CXX --mode=compile icpc -o ltablib-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX ltablib.c
+ltablib.c
+libtool --quiet --tag=CXX --mode=compile icpc -o lstrlib-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lstrlib.c
+lstrlib.c
+libtool --quiet --tag=CXX --mode=compile icpc -o loadlib-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX loadlib.c
+loadlib.c
+libtool --quiet --tag=CXX --mode=compile icpc -o linit-c++.lo -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX linit.c
+linit.c
+libtool --quiet --tag=CXX --mode=link icpc -version-info 0:0:0 \
+            -rpath /usr/lib/x86_64-linux-gnu -Wl,--version-script,../debian/version-script -o liblua5.1-c++.la lapi-c++.lo lcode-c++.lo ldebug-c++.lo ldo-c++.lo ldump-c++.lo lfunc-c++.lo lgc-c++.lo llex-c++.lo lmem-c++.lo lobject-c++.lo lopcodes-c++.lo lparser-c++.lo lstate-c++.lo lstring-c++.lo ltable-c++.lo ltm-c++.lo lundump-c++.lo lvm-c++.lo lzio-c++.lo lauxlib-c++.lo lbaselib-c++.lo ldblib-c++.lo liolib-c++.lo lmathlib-c++.lo loslib-c++.lo ltablib-c++.lo lstrlib-c++.lo loadlib-c++.lo linit-c++.lo -lm -ldl
+xiar: executing 'ar'
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX lua.c
+lua.c
+libtool --quiet --tag=CC --mode=link icc -Wl,--version-script,../debian/version-script -static -Wl,-E -o lua5.1 lua.o liblua5.1.la -lreadline -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX luac.c
+luac.c
+libtool --quiet --tag=CC --mode=compile icc -c -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/dev/shm/lua5.1/lua5.1-5.1.5=. -Wformat -march=native -pipe -fstack-security-check -Wformat-security -DLUA_USE_LINUX print.c
+print.c
+libtool --quiet --tag=CC --mode=link icc -static -o luac5.1 luac.o print.o liblua5.1.la
+make[3]: Leaving directory '/dev/shm/lua5.1/lua5.1-5.1.5/src'
+make[2]: Leaving directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+make[1]: Leaving directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+   debian/rules override_dh_auto_test
+make[1]: Entering directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+/usr/bin/make debian_test
+make[2]: Entering directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+cd src; /usr/bin/make debian_all CFLAGS+=-DLUA_USE_LINUX \
+	LIB_LIBS="-lm -ldl" LUA_LIBS="-lreadline" LDFLAGS="-Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax"
+make[3]: Entering directory '/dev/shm/lua5.1/lua5.1-5.1.5/src'
+make[3]: Nothing to be done for 'debian_all'.
+make[3]: Leaving directory '/dev/shm/lua5.1/lua5.1-5.1.5/src'
+src/lua5.1 test/hello.lua
+Hello world, from Lua 5.1!
+make[2]: Leaving directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+make[1]: Leaving directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+ fakeroot debian/rules binary
+dh binary
+   dh_testroot
+   dh_prep
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+/usr/bin/make debian_install \
+	INSTALL_TOP=/dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr \
+	INSTALL_MAN=/dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/share/man/man1 \
+	INSTALL_INC=/dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/include/lua5.1
+make[2]: Entering directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+cd src; /usr/bin/make debian_all CFLAGS+=-DLUA_USE_LINUX \
+	LIB_LIBS="-lm -ldl" LUA_LIBS="-lreadline" LDFLAGS="-Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax"
+make[3]: Entering directory '/dev/shm/lua5.1/lua5.1-5.1.5/src'
+make[3]: Nothing to be done for 'debian_all'.
+make[3]: Leaving directory '/dev/shm/lua5.1/lua5.1-5.1.5/src'
+cd src; mkdir -p /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/bin /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/include/lua5.1 /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/lib/x86_64-linux-gnu /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/share/man/man1
+cd src; libtool --quiet --tag=CC --mode=install install -p -m 0755 lua5.1 luac5.1 /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/bin
+cd src; install -p -m 0644 lua.h luaconf.h lualib.h lauxlib.h ../etc/lua.hpp /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/include/lua5.1
+cd src; libtool --quiet --tag=CC --mode=install install -p -m 0644 liblua5.1.la /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/lib/x86_64-linux-gnu
+libtool: warning: remember to run 'libtool --finish /usr/lib/x86_64-linux-gnu'
+cd src; libtool --quiet --tag=CXX --mode=install install -p -m 0644 liblua5.1-c++.la /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/lib/x86_64-linux-gnu
+libtool: warning: remember to run 'libtool --finish /usr/lib/x86_64-linux-gnu'
+install -p -m 0644 doc/lua.1 /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/share/man/man1/lua5.1.1; install -p -m 0644 doc/luac.1 /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/share/man/man1/luac5.1.1;
+make[2]: Leaving directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+make[1]: Leaving directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+   debian/rules override_dh_install
+make[1]: Entering directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+mkdir -p /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig
+echo "prefix=/usr" > /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua5.1.pc
+echo "major_version=5.1" >> /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua5.1.pc
+echo "version=5.1.5" >> /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua5.1.pc
+echo "lib_name_include=lua5.1" >> /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua5.1.pc
+echo "deb_host_multiarch=x86_64-linux-gnu" >> /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua5.1.pc
+cat debian/lua.pc.in >> /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua5.1.pc
+ln -s lua5.1.pc /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua-5.1.pc
+ln -s lua5.1.pc /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua51.pc
+echo "prefix=/usr" > /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua5.1-c++.pc
+echo "major_version=5.1" >> /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua5.1-c++.pc
+echo "version=5.1.5" >> /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua5.1-c++.pc
+echo "lib_name_include=lua5.1" >> /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua5.1-c++.pc
+echo "deb_host_multiarch=x86_64-linux-gnu" >> /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua5.1-c++.pc
+cat debian/lua-c++.pc.in >> /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua5.1-c++.pc
+ln -s lua5.1-c++.pc /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua-5.1-c++.pc
+ln -s lua5.1-c++.pc /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/lua51-c++.pc
+mkdir -p /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/include/x86_64-linux-gnu/
+cp src/lua5.1-deb-multiarch.h /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/include/x86_64-linux-gnu/
+mkdir -p /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/share/lua5.1/
+cp debian/version-script /dev/shm/lua5.1/lua5.1-5.1.5/debian/tmp/usr/share/lua5.1/
+dh_install
+make[1]: Leaving directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+   debian/rules override_dh_installdocs
+make[1]: Entering directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+dh_installdocs -X/man/ -A debian/README.Debian
+chmod +x debian/lua5.1-doc/usr/share/doc/lua5.1-doc/examples/debian/script/hello
+chmod: cannot access 'debian/lua5.1-doc/usr/share/doc/lua5.1-doc/examples/debian/script/hello': No such file or directory
+make[1]: *** [debian/rules:57: override_dh_installdocs] Error 1
+make[1]: Leaving directory '/dev/shm/lua5.1/lua5.1-5.1.5'
+make: *** [debian/rules:28: binary] Error 2
+FAKEROOTKEY=481623260 LD_LIBRARY_PATH=:/opt/intel/lib/intel64_lin:/opt/intel/tbb/lib/intel64/gcc4.7 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libfakeroot/libfakeroot-sysv.so debian/rules binary
+ dpkg-genbuildinfo --build=binary
+dpkg-genbuildinfo: error: binary build with no binary artifacts found; .buildinfo is meaningless
+dpkg-buildpackage: error: dpkg-genbuildinfo --build=binary subprocess returned exit status 25
